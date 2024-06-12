@@ -1,5 +1,5 @@
 {% set name = "sardana-limaccd" %}
-{% set version = "0.9.3" %}
+{% set version = "0.9.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/ALBA-Synchrotron/sardana-limaccd/archive/{{ version }}.tar.gz
-  sha256: 0234834bae97c6fb9290815d95d3f48c738aa6db02a974d0a21873519de923d4
+  sha256: 765fbc16913b7dd20f966c8f03296a3c86a4b935ade97151529976f8db82772c
 
 build:
   noarch: python
