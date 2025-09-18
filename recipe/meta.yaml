@@ -6,8 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://gitlab.com/sardana-org/sardana-limaccd/-/archive/{{ version }}/sardana-limaccd-{{ version }}.tar.gz
-  sha256: dc53a04bd6e97dd85eeae16bac6d4a36c234c375af08b2b39fa9fd9eca4d5ab9
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: ee545b1be8a5d7025381b52e56b0b76dc4ba2b8468c96aacb6d484358b14fa39
 
 build:
   noarch: python
