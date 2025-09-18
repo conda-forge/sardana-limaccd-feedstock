@@ -30,13 +30,8 @@ tests:
   - python:
       imports:
         - sardana_limaccd
-      python_version: ${{ python_min }}.*
-  - requirements:
-      run:
-        - pip
-        - python ${{ python_min }}.*
-    script:
-      - pip check
+      python_version: ["${{ python_min }}.*", "3.*"]
+      pip_check: true
 
 about:
   summary: LimaCCDs Tango plugins for Sardana
