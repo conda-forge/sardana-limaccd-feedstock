@@ -1,0 +1,50 @@
+schema_version: 1
+
+context:
+  name: sardana-limaccd
+  version: 0.12.0
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
+  sha256: ee545b1be8a5d7025381b52e56b0b76dc4ba2b8468c96aacb6d484358b14fa39
+
+build:
+  number: 2
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - sardana
+
+tests:
+  - python:
+      imports:
+        - sardana_limaccd
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+    script:
+      - pip check
+
+about:
+  summary: LimaCCDs Tango plugins for Sardana
+  license: GPL-3.0-or-later
+  license_file: LICENSE
+  homepage: https://gitlab.com/sardana-org/sardana-limaccd
+
+extra:
+  recipe-maintainers:
+    - rhomspuron
+    - ovallcorba
