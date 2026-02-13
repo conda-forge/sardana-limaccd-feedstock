@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: sardana-limaccd
-  version: 0.12.0
+  version: 0.13.0
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
-  sha256: ee545b1be8a5d7025381b52e56b0b76dc4ba2b8468c96aacb6d484358b14fa39
+  sha256: a4f6a0fdfba2cf367ebfd52d71bbdaef0dbc66aaaf53f112105e03b1b46886ea
 
 build:
-  number: 2
+  number: 1
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
 
